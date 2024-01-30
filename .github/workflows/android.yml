@@ -26,7 +26,7 @@ jobs:
       run: ./gradlew build
       
     - name: Move build to repository root
-      run: mv app/build/outputs/*.apk .
+      run: mv app/release/*.apk .
 
     - name: Display file structure
       run: ls -R
@@ -35,4 +35,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: app-release
-          path: app/build/outputs/*.apk  # Corrected path
+          path: app/release/*.apk  # Corrected path
